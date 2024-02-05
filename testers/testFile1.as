@@ -1,0 +1,74 @@
+; this is just testing a bunch of the normal commands
+; don't look for any logic here....
+
+.extern STR
+.extern LENGTH
+.extern WEE
+.entry HELLO
+.entry IMPORTANT_MESSAGE
+
+macro m1
+		clr 	r1
+		mov 	r2, r1
+		inc		r1
+		cmp 	r1, r2
+		bne 	MAIN
+endmacro
+
+macro m2
+		get 	r1
+		prn 	r5
+		mov 	#42, r5
+		jsr 	WEE
+		cmp 	STR, r5
+		; idk what this does but it should still run
+endmacro
+
+MAIN: 	mov		#5, r2
+		mov		#-7, HELLO
+		mov 	#0, r4
+		mov 	r2,r5
+		m1
+		mov 	STR.1, LENGTH
+		cmp 	#0, #99
+		cmp 	r7, TEST.3
+		
+LOOP1:	cmp 	TEST.2, LENGTH
+		add 	r0, r6
+		add 	#136, TEST.2
+		add 	LENGTH, r2
+		add 	#-4, HELLO
+		add 	#0, TEST.2 
+		mov 	#18, r7
+		add 	#4, r7
+		m2	
+		cmp 	r7, r3
+		sub 	#4, r7
+		jmp 	LOOP1
+		jmp 	LOOP2
+		
+LOOP2:	sub 	#-8, r3
+		not 	r1
+		not 	IMPORTANT_MESSAGE
+		dec 	r7
+		inc 	TEST.2
+		clr 	r3
+		mov 	#17, r3
+		inc 	r3
+		m1
+		cmp 	r3, TEST.2
+		lea 	TEST.2, r3
+		not 	TEST.1
+		jmp 	LOOP2
+		hlt
+		
+HELLO:	.data 	1,2,3,4,5,6,7,8,9
+LIST: 	.data 	0,2,4,8,10,12
+LIST2: 	.data 	-1,-3,-5,-7
+RANDOM: .data 	1,1,2,3,5,8,13,21,34,55,89
+TEST: 	.struct 1, "abc"
+TEST: 	.struct 2, "Hello World"
+TEST: 	.struct 3, "foo"
+IMPORTANT_MESSAGE: 	.string "I like assembly"
+STR2: 	.string "We put a lot of work into this ^.^"
+		

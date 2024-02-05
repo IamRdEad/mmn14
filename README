@@ -1,0 +1,39 @@
+Assignment mmn 14 - the c lab project
+assembler for assembly, that can take files and outputs .ob, .ext, .ent files
+author - Daniel Dubinskey 
+author - Yonatan Tzukerman
+@date 21/8/2022
+
+
+ABOUT THE FILES
+data.h - our main header file. this has all functions that we use across the different .c files and lots of definitions
+main.c - the main running program.
+pre_asm.c - handles the pre assembler part of the project
+asm_part1.c - handles the first run of the assembler
+asm_part2.c - handles the second run of the assembler
+
+handle_instructions1.c - handles everything to do with the instructions for the *first* run
+handle_instructions2.c - handles everything to do with the instructions for the *second* run
+
+handle_commands1.c - handles everything to do with the commands for the *first* run
+handle_commands2.c - handles everything to do with the commands for the *second* run
+
+utils.c and base_trans.c are both files with useful functions used throughout the project
+structs folder has our main struct, the dictionary.c and dictionary.h files
+
+
+HOW TO RUN:
+after using "make"
+simply type "./main testFile1 testFile2 ..."
+
+TESTERS:
+our program has 3 main test files that should work. named testFile1 testFile2 and testFile3.
+testFile1 is a bunch of commands and instructions together that should work but have no logic behind it
+testFile2 is exactly the same as the examle in the mmn instructions
+testFile3 is version of testFile2 but with macros
+
+we also have testFile4 which has a bunch of errors that we found and handled throughout the code
+
+
+Have fun checking the project, we put a lot of work and time into it ^.^
+(there's also some easter eggs to find here)
